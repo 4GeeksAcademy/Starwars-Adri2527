@@ -2,9 +2,11 @@ import React from "react";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
+
 export const Details = (props) => {
     return (
-        <div className="container">
+        <div className="container mt-5">
+          
             <div className="card mb-3" style={{ maxWidth: "100%" }}>
                 <div className="row g-0">
                     <div className="col-md-4">
@@ -78,6 +80,9 @@ export const Details = (props) => {
                     </span>
                 </div>
             </div>
+            <Link to="/">
+                <button className="btn btn-primary">HOME</button>
+            </Link>
         </div>
     );
 };
