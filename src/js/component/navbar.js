@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-export const Navbar = ({ likedCards }) => {
+export const Navbar = ({ likedCards, setLikedCards }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const removeLikedCard = (index) => {
+    const newLikedCards = [...likedCards];
+    newLikedCards.splice(index, 1);
+    setLikedCards(newLikedCards);
+  };
 
   return (
     <>
@@ -24,7 +30,11 @@ export const Navbar = ({ likedCards }) => {
         <Modal.Body>
           <ul>
             {likedCards.map((name, index) => (
-              <li key={index}>{name}</li>
+              <li className="mt-3" key={index}>
+                <h4>{name}
+                  <button className="btn btn-danger ms-2 " onClick={() => removeLikedCard(index)}>X</button>
+                </h4>
+              </li>
             ))}
           </ul>
         </Modal.Body>
