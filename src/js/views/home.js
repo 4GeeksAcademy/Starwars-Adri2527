@@ -12,7 +12,7 @@ export const Home = () => {
       <Navbar likedCards={likedCards} setLikedCards={setLikedCards} />
       <div className="mt-2">
         <h1 className="py-3">Characters</h1>
-        <div className="d-flex flex-wrap justify-content-around mx-4">
+        <div className="d-inline-flex mx-4">
 
           <Cards
             onLike={(name) => setLikedCards([...likedCards, name])}
