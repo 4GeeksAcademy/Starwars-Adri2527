@@ -13,14 +13,11 @@ export const Home = () => {
       <div className="mt-2">
         <h1 className="py-3">Characters</h1>
         <div className="d-flex flex-wrap justify-content-around mx-4">
+
           <Cards
-            name="Willy"
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL60nDFTtZoNrif00LhpIPN3YDRCEiuQ6wQ56NSht60mbz3ylRUMr7PO3pwg&s"
-            gender="Male"
-            hairColor="Brown"
-            eyesColor="Blue"
             onLike={(name) => setLikedCards([...likedCards, name])}
           />
+          
         </div>
       </div>
       <div className="mt-5 border-top">
@@ -34,6 +31,7 @@ export const Home = () => {
             eyesColor="Blue"
             onLike={(name) => setLikedCards([...likedCards, name])}
           />
+        
         </div>
       </div>
     </div>

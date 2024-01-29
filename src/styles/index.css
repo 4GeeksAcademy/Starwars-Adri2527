@@ -2,10 +2,49 @@
     General Styles
 */
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
+}
+
+.hoverA:hover {
+  color: yellow;
+
+}
+
+.fondoWelcome {
+  background-image: url("https://i.blogs.es/23b58b/star-wars-wallpapers-6/1366_2000.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.SB {
+  font-family: 'Arial', sans-serif;
+  font-size: 2em;
+  background: linear-gradient(90deg, #000000, #858584, #fff);
+  background-size: 200% 100%;
+  color: #333;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 20);
+  animation: shine 20s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
   }
+
+  90% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 200.1% 0; 
+  }
+}
