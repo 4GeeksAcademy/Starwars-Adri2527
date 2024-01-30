@@ -32,7 +32,7 @@ li {
   display: inline-block;
   border-radius: 10px;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 20);
-  animation: shine 20s linear infinite;
+  animation: shine 10s linear ;
 }
 
 @keyframes shine {
@@ -40,11 +40,45 @@ li {
     background-position: -200% 0;
   }
 
-  90% {
-    background-position: 200% 0;
+  99% {
+    background-position: 100% 0;
   }
 
   100% {
-    background-position: 200.1% 0; 
+    background-position: 100% 0; 
   }
+}
+
+.loader-container {
+  position: relative; /* Establecer un contexto de posicionamiento para el loader absoluto */
+  width: 100%; /* Ajustar al ancho de su contenedor */
+  height: 100vh; /* 100% del viewport height */
+}
+
+.loader {
+  position: absolute; /* Posicionamiento absoluto */
+  top: 50%; /* Coloca el elemento en el centro verticalmente */
+  left: 50%; /* Coloca el elemento en el centro horizontalmente */
+  transform: translate(-50%, -50%); /* Centra el elemento correctamente */
+  width: 70px;
+  height: 40px;
+  outline: 2px solid #fff;
+  background:
+    radial-gradient(farthest-side,#000 90%,#0000) 0 0/8px 8px no-repeat,
+    linear-gradient(#fff 0 0) 50%/10px 100% no-repeat,
+    conic-gradient(from  90deg at 10px 10px,#0000 90deg,#fff 0),
+    conic-gradient(from -90deg at 60px 30px,#0000 90deg,#fff 0);
+  animation: l4 5s infinite;
+}
+
+@keyframes l4 {
+  0%    {background-position:0    0   ,50%;clip-path:circle(15px at left  4px top    4px)}
+  12.5% {background-position:50%  0   ,50%;clip-path:circle(15px at left  50% top    4px)}
+  25%   {background-position:50%  100%,50%;clip-path:circle(15px at left  50% bottom 4px)}
+  37.5% {background-position:100% 100%,50%;clip-path:circle(15px at right 4px bottom 4px)}
+  50%   {background-position:100% 0   ,50%;clip-path:circle(15px at right 4px top    4px)}
+  62.5% {background-position:50%  0   ,50%;clip-path:circle(15px at right 50% top    4px)}
+  75%   {background-position:50%  100%,50%;clip-path:circle(15px at right 50% bottom 4px)}
+  82.5% {background-position:0    100%,50%;clip-path:circle(15px at left  4px bottom 4px)}
+  100%  {background-position:0    0   ,50%;clip-path:circle(15px at left  4px top    4px)}
 }
