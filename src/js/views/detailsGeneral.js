@@ -28,7 +28,7 @@ export const Details = () => {
   const lastCharachterUid = pathId.split("/").pop();
 
   return (
-    <div className="container mt-1 body bg-black text-white">
+    <div className="container mt-5 body custom-bg-inherit text-white">
 
       {apiLoaded ? (
         <>
