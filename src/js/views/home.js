@@ -34,6 +34,23 @@ export const Home = () => {
     fetchData();
   }, [actions, store.characters, store.planets, store.vehicles]);
 
+  // Función para manejar el clic en el botón de "Me gusta"
+  const handleLike = (name) => {
+    const updatedLikedCards = [...likedCards, name];
+    // Actualizar el estado local likedCards
+    setLikedCards(updatedLikedCards);
+    // Guardar likedCards en el almacenamiento local
+    localStorage.setItem("likedCards", JSON.stringify(updatedLikedCards));
+  };
+
+  // Cargar likedCards del almacenamiento local al montar el componente
+  useEffect(() => {
+    const storedLikedCards = localStorage.getItem("likedCards");
+    if (storedLikedCards) {
+      setLikedCards(JSON.parse(storedLikedCards));
+    }
+  }, []);
+
   return (
     <div className="text-center">
       {apiLoaded ? (
@@ -48,7 +65,7 @@ export const Home = () => {
                   type="characters"
                   idNumber={character.uid}
                   name={character.name}
-                  onLike={(name) => setLikedCards([...likedCards, name])}
+                  onLike={handleLike} 
                 />
               ))}
             </div>
@@ -63,7 +80,7 @@ export const Home = () => {
                   type="planets"
                   idNumber={planet.uid}
                   name={planet.name}
-                  onLike={(name) => setLikedCards([...likedCards, name])}
+                  onLike={handleLike} 
                 />
               ))}
             </div>
@@ -78,7 +95,7 @@ export const Home = () => {
                   type="vehicles"
                   idNumber={vehicle.uid}
                   name={vehicle.name}
-                  onLike={(name) => setLikedCards([...likedCards, name])}
+                  onLike={handleLike} 
                 />
               ))}
             </div>

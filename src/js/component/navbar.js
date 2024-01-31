@@ -26,11 +26,11 @@ export const Navbar = ({ likedCards, setLikedCards }) => {
           </button>
         </div>
       </nav>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Favorites</Modal.Title>
+      <Modal show={show} onHide={handleClose} >
+        <Modal.Header className="bg-dark text-white" closeButton>
+          <Modal.Title className="bg-dark text-white">Favorites</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="bg-dark text-white">
           <ul>
             {likedCards.map((name, index) => (
               <li className="mt-3" key={index}>
@@ -41,7 +41,7 @@ export const Navbar = ({ likedCards, setLikedCards }) => {
             ))}
           </ul>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="bg-dark text-white">
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

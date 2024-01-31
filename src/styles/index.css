@@ -20,6 +20,7 @@ li {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  max-height: 600px;
 }
 
 .SB {
@@ -54,7 +55,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   
-  font-size: 2.5rem; /* Tamaño de fuente grande para encabezados */
+  font-size: 1rem; /* Tamaño de fuente grande para encabezados */
   font-weight: bold;
   color: #F10C49; /* Color rojo similar al de Star Wars */
   /* Utiliza la clase .font-star-wars para aplicar el estilo de fuente */
@@ -73,16 +74,21 @@ body {
 
 
 .loader-container {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  min-height: 100%;
+ 
 }
 
+
+
+
 .loader {
-  width: 64px;
-  height: 64px;
+  width: 200px;
+  height: 200px;
+
   aspect-ratio: 1;
   background: 
     radial-gradient(farthest-side at bottom right,#F10C49 90%,#0000),
