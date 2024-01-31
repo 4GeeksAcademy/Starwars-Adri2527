@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Importa Link aquí
 
 export const Navbar = ({ likedCards, setLikedCards }) => {
   const [show, setShow] = useState(false);
@@ -18,10 +18,10 @@ export const Navbar = ({ likedCards, setLikedCards }) => {
     <>
       <nav className="navbar navbar-black bg-black  text-white mb-3">
         <Link to="/">
-         <span className="navbar-brand mb-0 h1 ms-3">StarWars</span>
+          <span className="navbar-brand mb-0 h1 ms-3">StarWars</span>
         </Link>
         <div className="ml-auto">
-          <button className="btn btn-secondary me-3" onClick={handleShow}>
+          <button className="btn botonEstelares me-3 btn-secondary" onClick={handleShow}>
             Favs ({likedCards.length})
           </button>
         </div>

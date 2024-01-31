@@ -49,44 +49,108 @@ li {
   }
 }
 
-.loader-container {
-  position: relative; /* Establecer un contexto de posicionamiento para el loader absoluto */
-  width: 100%; /* Ajustar al ancho de su contenedor */
-  height: 100vh; /* 100% del viewport height */
-}
-
-.loader {
-  position: absolute; /* Posicionamiento absoluto */
-  top: 50%; /* Coloca el elemento en el centro verticalmente */
-  left: 50%; /* Coloca el elemento en el centro horizontalmente */
-  transform: translate(-50%, -50%); /* Centra el elemento correctamente */
-  width: 70px;
-  height: 40px;
-  outline: 2px solid #fff;
-  background:
-    radial-gradient(farthest-side,#000 90%,#0000) 0 0/8px 8px no-repeat,
-    linear-gradient(#fff 0 0) 50%/10px 100% no-repeat,
-    conic-gradient(from  90deg at 10px 10px,#0000 90deg,#fff 0),
-    conic-gradient(from -90deg at 60px 30px,#0000 90deg,#fff 0);
-  animation: l4 5s infinite;
-}
-
-@keyframes l4 {
-  0%    {background-position:0    0   ,50%;clip-path:circle(15px at left  4px top    4px)}
-  12.5% {background-position:50%  0   ,50%;clip-path:circle(15px at left  50% top    4px)}
-  25%   {background-position:50%  100%,50%;clip-path:circle(15px at left  50% bottom 4px)}
-  37.5% {background-position:100% 100%,50%;clip-path:circle(15px at right 4px bottom 4px)}
-  50%   {background-position:100% 0   ,50%;clip-path:circle(15px at right 4px top    4px)}
-  62.5% {background-position:50%  0   ,50%;clip-path:circle(15px at right 50% top    4px)}
-  75%   {background-position:50%  100%,50%;clip-path:circle(15px at right 50% bottom 4px)}
-  82.5% {background-position:0    100%,50%;clip-path:circle(15px at left  4px bottom 4px)}
-  100%  {background-position:0    0   ,50%;clip-path:circle(15px at left  4px top    4px)}
-}
-
-
 body {
   background-image: url('https://fondosmil.com/fondo/10787.jpg');
   background-size: cover;
   background-repeat: repeat;
   
+  font-size: 2.5rem; /* Tamaño de fuente grande para encabezados */
+  font-weight: bold;
+  color: #F10C49; /* Color rojo similar al de Star Wars */
+  /* Utiliza la clase .font-star-wars para aplicar el estilo de fuente */
+  font-family: 'Star Jedi', sans-serif;
+
+
+  
+}
+.font-star-wars {
+  font-family: 'Star Jedi', sans-serif; 
+  
+}
+
+
+
+
+
+.loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.loader {
+  width: 64px;
+  height: 64px;
+  aspect-ratio: 1;
+  background: 
+    radial-gradient(farthest-side at bottom right,#F10C49 90%,#0000),
+    radial-gradient(farthest-side at bottom left ,#F10C49 90%,#0000),
+    radial-gradient(farthest-side at top    right,#F10C49 90%,#0000),
+    radial-gradient(farthest-side at top    left ,#F10C49 90%,#0000),
+    radial-gradient(farthest-side at bottom right,#f4dd51 90%,#0000),
+    radial-gradient(farthest-side at bottom left ,#f4dd51 90%,#0000),
+    radial-gradient(farthest-side at top    right,#f4dd51 90%,#0000),
+    radial-gradient(farthest-side at top    left ,#f4dd51 90%,#0000),
+    radial-gradient(farthest-side at bottom right,#e3aad6 90%,#0000),
+    radial-gradient(farthest-side at bottom left ,#e3aad6 90%,#0000),
+    radial-gradient(farthest-side at top    right,#e3aad6 90%,#0000),
+    radial-gradient(farthest-side at top    left ,#e3aad6 90%,#0000);
+  background-size: 25% 25%;
+  background-repeat: no-repeat;
+  animation: l16 2s infinite;
+}
+
+@keyframes l16 {
+  0% {
+    background-position: calc(1*100%/3) calc(1*100%/3), calc(2*100%/3) calc(1*100%/3), calc(1*100%/3) calc(2*100%/3), calc(2*100%/3) calc(2*100%/3),
+                          calc(1*100%/3) calc(1*100%/3), calc(2*100%/3) calc(1*100%/3), calc(1*100%/3) calc(2*100%/3), calc(2*100%/3) calc(2*100%/3),
+                          calc(1*100%/3) calc(1*100%/3), calc(2*100%/3) calc(1*100%/3), calc(1*100%/3) calc(2*100%/3), calc(2*100%/3) calc(2*100%/3);
+  }
+  16.67% {
+    background-position: calc(0*100%/3) calc(0*100%/3), calc(3*100%/3) calc(0*100%/3), calc(0*100%/3) calc(3*100%/3), calc(3*100%/3) calc(3*100%/3),
+                          calc(1*100%/3) calc(1*100%/3), calc(2*100%/3) calc(1*100%/3), calc(1*100%/3) calc(2*100%/3), calc(2*100%/3) calc(2*100%/3),
+                          calc(1*100%/3) calc(1*100%/3), calc(2*100%/3) calc(1*100%/3), calc(1*100%/3) calc(2*100%/3), calc(2*100%/3) calc(2*100%/3);
+  }
+  33.33% {
+    background-position: calc(0*100%/3) calc(0*100%/3), calc(3*100%/3) calc(0*100%/3), calc(0*100%/3) calc(3*100%/3), calc(3*100%/3) calc(3*100%/3),
+                          calc(0*100%/3) calc(0*100%/3), calc(3*100%/3) calc(0*100%/3), calc(0*100%/3) calc(3*100%/3), calc(3*100%/3) calc(3*100%/3),
+                          calc(1*100%/3) calc(1*100%/3), calc(2*100%/3) calc(1*100%/3), calc(1*100%/3) calc(2*100%/3), calc(2*100%/3) calc(2*100%/3);
+  }
+  50% {
+    background-position: calc(0*100%/3) calc(0*100%/3), calc(3*100%/3) calc(0*100%/3), calc(0*100%/3) calc(3*100%/3), calc(3*100%/3) calc(3*100%/3),
+                          calc(0*100%/3) calc(0*100%/3), calc(3*100%/3) calc(0*100%/3), calc(0*100%/3) calc(3*100%/3), calc(3*100%/3) calc(3*100%/3),
+                          calc(0*100%/3) calc(0*100%/3), calc(3*100%/3) calc(0*100%/3), calc(0*100%/3) calc(3*100%/3), calc(3*100%/3) calc(3*100%/3);
+  }
+}
+
+
+.botonEstelares {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.botonEstelares::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.8) 100%);
+  transition: all 0.5s ease;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.botonEstelares:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }

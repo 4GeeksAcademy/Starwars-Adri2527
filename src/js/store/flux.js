@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           planets: [],
           vehicles: [],
           details:[],
+          favs:[],
       },
       actions: {
           // Use getActions to call a function within a function
@@ -30,6 +31,13 @@ const getState = ({ getStore, getActions, setStore }) => {
               //reset the global store
               setStore({ demo: demo });
           },
+
+
+          setFavorite: (name) => {
+            const { favs } = getStore();
+            setStore({ favs: [...favs, name] });
+        },
+        
 
           loadItemOnClick: async (pathId, setApiloaded) => {
             try {

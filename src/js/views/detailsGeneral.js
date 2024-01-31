@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link, useLocation } from "react-router-dom";
+import { BiHousesFill } from 'react-icons/bi';
 
 export const Details = () => {
   const { store, actions } = useContext(Context);
@@ -13,6 +14,8 @@ export const Details = () => {
       try {
         console.log("Ruta actual:", pathId);
         await actions.loadItemOnClick(pathId, setApiLoaded);
+        // Una vez cargada la API, establece el estado apiLoaded en true
+        setApiLoaded(true);
       } catch (error) {
         console.log(error);
       }
@@ -25,22 +28,24 @@ export const Details = () => {
   const lastCharachterUid = pathId.split("/").pop();
 
   return (
-    <div className="container w-50 mb-5 mt-5 body bg-black text-white">
-      <div className="bg-black text-white">
-        <Link to="/home">
-          <button className="w-100 text-white bg-black">Home</button>
-        </Link>
-      </div>
+    <div className="container mt-1 body bg-black text-white">
+      <Link to="/home">
+        <div className="bg-black text-white botonEstelar btn-secondary">
+          <button className="botonEstelares btn-secondary text-white">
+             Home
+          </button>
+        </div>
+      </Link>
       {apiLoaded ? (
         <>
-          <div className="row d-flex justify-content-around">
+          <div className="row d-flex justify-content-evenly ">
             <div className="col-md-6">
               <img
                 className="mt-3"
                 src={`https://starwars-visualguide.com/assets/img/${
                   path === "people" ? "characters" : path
                 }/${lastCharachterUid}.jpg`}
-                style={{ maxWidth: "100%" }} // Limita el tamaño de la imagen al 50% del div contenedor
+                style={{ maxWidth: "100%", maxHeight: "85%" }} // Añade maxHeight al estilo en línea
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src =
@@ -48,7 +53,7 @@ export const Details = () => {
                 }}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 ">
               {store.details && store.details.properties && (
                 <>
                   <h1 className="text-center mt-3">
@@ -59,17 +64,13 @@ export const Details = () => {
             </div>
           </div>
           <div className="row">
-            <hr
-              className="divider mt-4"
-              style={{ color: "red", height: "5px" }}
-            />
             {store.details && store.details.properties && (
               <>
                 {Object.entries(store.details.properties)
                   .slice(0, 6)
                   .map(([key, value]) => (
                     <div key={key} className="col-md-4">
-                      <div className="card my-3">
+                      <div className="card my-2">
                         <div className="card-body bg-black">
                           <h6 className="fw-bold text-center">
                             {key.toUpperCase()}
