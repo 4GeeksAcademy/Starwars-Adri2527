@@ -45,7 +45,7 @@ export const Home = () => {
               {store.characters.map((character, index) => (
                 <Cards
                   key={index}
-                  type="people"
+                  type="characters"
                   idNumber={character.uid}
                   name={character.name}
                   onLike={(name) => setLikedCards([...likedCards, name])}

@@ -22,7 +22,7 @@ export const Cards = ({ type, idNumber, name, onLike }) => {
 
   const getLinkPath = () => {
     switch (type) {
-      case "people":
+      case "characters":
         return `/people/${idNumber}`;
       case "planets":
         return `/planets/${idNumber}`;

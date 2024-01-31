@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Importa Link aquí
+import { Link } from "react-router-dom"; 
 
 export const Navbar = ({ likedCards, setLikedCards }) => {
   const [show, setShow] = useState(false);
