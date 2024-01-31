@@ -33,17 +33,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
           loadItemOnClick: async (pathId, setApiloaded) => {
             try {
-              const response = await fetch(`https://www.swapi.tech/api${pathId}`);
-              const data = await response.json();
-              // Guardar datos en el store con setStore
-              setStore({ details: data|| [] });
-              // Actualizar el estado apiloaded
-              setApiloaded(true);
+                const response = await fetch(`https://www.swapi.tech/api${pathId}`);
+                const data = await response.json();
+                // Guardar datos en el store con setStore
+                setStore({ details: data.result || {} }); // Almacenar data.result en lugar de data
+                // Actualizar el estado apiloaded
+                setApiloaded(true);
             } catch (error) {
-              console.error("Error fetching contacts:", error);
+                console.error("Error fetching details:", error);
             }
-          },
-          
+        },
+        
+        
 
           fetchCharacters: async () => {
               try {

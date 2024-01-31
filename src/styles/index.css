@@ -82,3 +82,11 @@ li {
   82.5% {background-position:0    100%,50%;clip-path:circle(15px at left  4px bottom 4px)}
   100%  {background-position:0    0   ,50%;clip-path:circle(15px at left  4px top    4px)}
 }
+
+
+body {
+  background-image: url('https://fondosmil.com/fondo/10787.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  
+}

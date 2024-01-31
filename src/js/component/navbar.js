@@ -16,7 +16,7 @@ export const Navbar = ({ likedCards, setLikedCards }) => {
 
   return (
     <>
-      <nav className="navbar navbar-light bg-light mb-3">
+      <nav className="navbar navbar-black bg-black  text-white mb-3">
         <Link to="/">
          <span className="navbar-brand mb-0 h1 ms-3">StarWars</span>
         </Link>
